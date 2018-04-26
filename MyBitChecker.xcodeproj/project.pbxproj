@@ -17,6 +17,8 @@
 		557E16E22091F02100016711 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557E16E12091F02100016711 /* TodayViewController.swift */; };
 		557E16E52091F02100016711 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 557E16E32091F02100016711 /* MainInterface.storyboard */; };
 		557E16E92091F02100016711 /* MyBitCheckerExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 557E16DC2091F02100016711 /* MyBitCheckerExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		73D149E8EC288DD10659A98B /* Pods_MyBitChecker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A4D8FD998BD2F7F61A3A44 /* Pods_MyBitChecker.framework */; };
+		DAA36CF9A9281FF643852ED1 /* Pods_MyBitCheckerExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD563C76198BA5C4B627F38 /* Pods_MyBitCheckerExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		497D48A176845BA741D79725 /* Pods-MyBitChecker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyBitChecker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyBitChecker/Pods-MyBitChecker.debug.xcconfig"; sourceTree = "<group>"; };
+		525C8AA9FA22CA2A0A264417 /* Pods-MyBitCheckerExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyBitCheckerExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyBitCheckerExtension/Pods-MyBitCheckerExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		557E16C02091EF6D00016711 /* MyBitChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyBitChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		557E16C32091EF6D00016711 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		557E16C52091EF6D00016711 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +61,10 @@
 		557E16E12091F02100016711 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		557E16E42091F02100016711 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		557E16E62091F02100016711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63341D2666405C945A845AA9 /* Pods-MyBitCheckerExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyBitCheckerExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyBitCheckerExtension/Pods-MyBitCheckerExtension.release.xcconfig"; sourceTree = "<group>"; };
+		86A4D8FD998BD2F7F61A3A44 /* Pods_MyBitChecker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyBitChecker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A96CB04CDF0B68EC89E6EBCE /* Pods-MyBitChecker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyBitChecker.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyBitChecker/Pods-MyBitChecker.release.xcconfig"; sourceTree = "<group>"; };
+		FBD563C76198BA5C4B627F38 /* Pods_MyBitCheckerExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyBitCheckerExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73D149E8EC288DD10659A98B /* Pods_MyBitChecker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +81,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				557E16DF2091F02100016711 /* NotificationCenter.framework in Frameworks */,
+				DAA36CF9A9281FF643852ED1 /* Pods_MyBitCheckerExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +95,7 @@
 				557E16E02091F02100016711 /* MyBitCheckerExtension */,
 				557E16DD2091F02100016711 /* Frameworks */,
 				557E16C12091EF6D00016711 /* Products */,
+				EBC801DA62D3566C5DF57B34 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				557E16DE2091F02100016711 /* NotificationCenter.framework */,
+				86A4D8FD998BD2F7F61A3A44 /* Pods_MyBitChecker.framework */,
+				FBD563C76198BA5C4B627F38 /* Pods_MyBitCheckerExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -129,6 +142,17 @@
 			path = MyBitCheckerExtension;
 			sourceTree = "<group>";
 		};
+		EBC801DA62D3566C5DF57B34 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				497D48A176845BA741D79725 /* Pods-MyBitChecker.debug.xcconfig */,
+				A96CB04CDF0B68EC89E6EBCE /* Pods-MyBitChecker.release.xcconfig */,
+				525C8AA9FA22CA2A0A264417 /* Pods-MyBitCheckerExtension.debug.xcconfig */,
+				63341D2666405C945A845AA9 /* Pods-MyBitCheckerExtension.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -136,10 +160,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 557E16D52091EF6D00016711 /* Build configuration list for PBXNativeTarget "MyBitChecker" */;
 			buildPhases = (
+				29DE57F19942DA698ADE2573 /* [CP] Check Pods Manifest.lock */,
 				557E16BC2091EF6D00016711 /* Sources */,
 				557E16BD2091EF6D00016711 /* Frameworks */,
 				557E16BE2091EF6D00016711 /* Resources */,
 				557E16ED2091F02100016711 /* Embed App Extensions */,
+				CAA98DE3259FCE072F1368BD /* [CP] Embed Pods Frameworks */,
+				5C3DDBDAEBE9C233847FC9BC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -155,9 +182,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 557E16EA2091F02100016711 /* Build configuration list for PBXNativeTarget "MyBitCheckerExtension" */;
 			buildPhases = (
+				02F13BDF011DBA6BC8E6EF59 /* [CP] Check Pods Manifest.lock */,
 				557E16D82091F02100016711 /* Sources */,
 				557E16D92091F02100016711 /* Frameworks */,
 				557E16DA2091F02100016711 /* Resources */,
+				F6F70DFF69D5035216843B1E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -227,6 +256,84 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02F13BDF011DBA6BC8E6EF59 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		29DE57F19942DA698ADE2573 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5C3DDBDAEBE9C233847FC9BC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyBitChecker/Pods-MyBitChecker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CAA98DE3259FCE072F1368BD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyBitChecker/Pods-MyBitChecker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6F70DFF69D5035216843B1E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyBitCheckerExtension/Pods-MyBitCheckerExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		557E16BC2091EF6D00016711 /* Sources */ = {
@@ -394,6 +501,7 @@
 		};
 		557E16D62091EF6D00016711 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 497D48A176845BA741D79725 /* Pods-MyBitChecker.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -410,6 +518,7 @@
 		};
 		557E16D72091EF6D00016711 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A96CB04CDF0B68EC89E6EBCE /* Pods-MyBitChecker.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -426,6 +535,7 @@
 		};
 		557E16EB2091F02100016711 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 525C8AA9FA22CA2A0A264417 /* Pods-MyBitCheckerExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D3JQUY48JT;
@@ -441,6 +551,7 @@
 		};
 		557E16EC2091F02100016711 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63341D2666405C945A845AA9 /* Pods-MyBitCheckerExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D3JQUY48JT;
