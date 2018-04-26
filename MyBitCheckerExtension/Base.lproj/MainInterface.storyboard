@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="MyBitCheckerExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="総資産" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXn-zK-Gwb">
+                                <rect key="frame" x="8" y="8" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhm-Ih-LCm">
+                                <rect key="frame" x="252" y="8" width="60" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmz-zc-cUw">
+                                <rect key="frame" x="8" y="37" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISz-KD-Bx0">
+                                <rect key="frame" x="259" y="37" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="jXn-zK-Gwb" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="8" id="3vI-q2-C9J"/>
+                            <constraint firstItem="jXn-zK-Gwb" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" constant="8" id="5GE-k8-wPO"/>
+                            <constraint firstItem="bmz-zc-cUw" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="8" id="PrL-ub-4Ue"/>
+                            <constraint firstItem="ISz-KD-Bx0" firstAttribute="centerY" secondItem="bmz-zc-cUw" secondAttribute="centerY" id="QhH-x7-ke3"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="ISz-KD-Bx0" secondAttribute="trailing" constant="8" id="WJu-cO-H0X"/>
+                            <constraint firstItem="bmz-zc-cUw" firstAttribute="top" secondItem="jXn-zK-Gwb" secondAttribute="bottom" constant="8" id="io4-1F-4bP"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="xhm-Ih-LCm" secondAttribute="trailing" constant="8" id="nfr-rW-abd"/>
+                            <constraint firstItem="xhm-Ih-LCm" firstAttribute="centerY" secondItem="jXn-zK-Gwb" secondAttribute="centerY" id="rfO-yn-8yi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="100"/>
+                    <connections>
+                        <outlet property="BtcLabel" destination="bmz-zc-cUw" id="5ys-Qh-CQl"/>
+                        <outlet property="totalAssetLabel" destination="xhm-Ih-LCm" id="hL8-Lo-ud7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

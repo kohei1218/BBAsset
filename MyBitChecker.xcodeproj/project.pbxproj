@@ -13,7 +13,35 @@
 		557E16CC2091EF6D00016711 /* MyBitChecker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 557E16CA2091EF6D00016711 /* MyBitChecker.xcdatamodeld */; };
 		557E16CE2091EF6D00016711 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 557E16CD2091EF6D00016711 /* Assets.xcassets */; };
 		557E16D12091EF6D00016711 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 557E16CF2091EF6D00016711 /* LaunchScreen.storyboard */; };
+		557E16DF2091F02100016711 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 557E16DE2091F02100016711 /* NotificationCenter.framework */; };
+		557E16E22091F02100016711 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557E16E12091F02100016711 /* TodayViewController.swift */; };
+		557E16E52091F02100016711 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 557E16E32091F02100016711 /* MainInterface.storyboard */; };
+		557E16E92091F02100016711 /* MyBitCheckerExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 557E16DC2091F02100016711 /* MyBitCheckerExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		557E16E72091F02100016711 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 557E16B82091EF6C00016711 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 557E16DB2091F02100016711;
+			remoteInfo = MyBitCheckerExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		557E16ED2091F02100016711 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				557E16E92091F02100016711 /* MyBitCheckerExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		557E16C02091EF6D00016711 /* MyBitChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyBitChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +52,11 @@
 		557E16CD2091EF6D00016711 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		557E16D02091EF6D00016711 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		557E16D22091EF6D00016711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		557E16DC2091F02100016711 /* MyBitCheckerExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MyBitCheckerExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		557E16DE2091F02100016711 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		557E16E12091F02100016711 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		557E16E42091F02100016711 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		557E16E62091F02100016711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +67,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		557E16D92091F02100016711 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				557E16DF2091F02100016711 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -41,6 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				557E16C22091EF6D00016711 /* MyBitChecker */,
+				557E16E02091F02100016711 /* MyBitCheckerExtension */,
+				557E16DD2091F02100016711 /* Frameworks */,
 				557E16C12091EF6D00016711 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				557E16C02091EF6D00016711 /* MyBitChecker.app */,
+				557E16DC2091F02100016711 /* MyBitCheckerExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,6 +111,24 @@
 			path = MyBitChecker;
 			sourceTree = "<group>";
 		};
+		557E16DD2091F02100016711 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				557E16DE2091F02100016711 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		557E16E02091F02100016711 /* MyBitCheckerExtension */ = {
+			isa = PBXGroup;
+			children = (
+				557E16E12091F02100016711 /* TodayViewController.swift */,
+				557E16E32091F02100016711 /* MainInterface.storyboard */,
+				557E16E62091F02100016711 /* Info.plist */,
+			);
+			path = MyBitCheckerExtension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,15 +139,34 @@
 				557E16BC2091EF6D00016711 /* Sources */,
 				557E16BD2091EF6D00016711 /* Frameworks */,
 				557E16BE2091EF6D00016711 /* Resources */,
+				557E16ED2091F02100016711 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				557E16E82091F02100016711 /* PBXTargetDependency */,
 			);
 			name = MyBitChecker;
 			productName = MyBitChecker;
 			productReference = 557E16C02091EF6D00016711 /* MyBitChecker.app */;
 			productType = "com.apple.product-type.application";
+		};
+		557E16DB2091F02100016711 /* MyBitCheckerExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 557E16EA2091F02100016711 /* Build configuration list for PBXNativeTarget "MyBitCheckerExtension" */;
+			buildPhases = (
+				557E16D82091F02100016711 /* Sources */,
+				557E16D92091F02100016711 /* Frameworks */,
+				557E16DA2091F02100016711 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyBitCheckerExtension;
+			productName = MyBitCheckerExtension;
+			productReference = 557E16DC2091F02100016711 /* MyBitCheckerExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -98,6 +179,10 @@
 				ORGANIZATIONNAME = "齋藤　航平";
 				TargetAttributes = {
 					557E16BF2091EF6D00016711 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					557E16DB2091F02100016711 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
@@ -117,6 +202,7 @@
 			projectRoot = "";
 			targets = (
 				557E16BF2091EF6D00016711 /* MyBitChecker */,
+				557E16DB2091F02100016711 /* MyBitCheckerExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -129,6 +215,14 @@
 				557E16D12091EF6D00016711 /* LaunchScreen.storyboard in Resources */,
 				557E16CE2091EF6D00016711 /* Assets.xcassets in Resources */,
 				557E16C92091EF6D00016711 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		557E16DA2091F02100016711 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				557E16E52091F02100016711 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,7 +239,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		557E16D82091F02100016711 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				557E16E22091F02100016711 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		557E16E82091F02100016711 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 557E16DB2091F02100016711 /* MyBitCheckerExtension */;
+			targetProxy = 557E16E72091F02100016711 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		557E16C72091EF6D00016711 /* Main.storyboard */ = {
@@ -162,6 +272,14 @@
 				557E16D02091EF6D00016711 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		557E16E32091F02100016711 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				557E16E42091F02100016711 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -277,6 +395,7 @@
 		557E16D62091EF6D00016711 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D3JQUY48JT;
@@ -292,6 +411,7 @@
 		557E16D72091EF6D00016711 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D3JQUY48JT;
@@ -299,6 +419,36 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.MyBitChecker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		557E16EB2091F02100016711 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D3JQUY48JT;
+				INFOPLIST_FILE = MyBitCheckerExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.MyBitChecker.MyBitCheckerExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		557E16EC2091F02100016711 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D3JQUY48JT;
+				INFOPLIST_FILE = MyBitCheckerExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.MyBitChecker.MyBitCheckerExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -321,6 +471,15 @@
 			buildConfigurations = (
 				557E16D62091EF6D00016711 /* Debug */,
 				557E16D72091EF6D00016711 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		557E16EA2091F02100016711 /* Build configuration list for PBXNativeTarget "MyBitCheckerExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				557E16EB2091F02100016711 /* Debug */,
+				557E16EC2091F02100016711 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
