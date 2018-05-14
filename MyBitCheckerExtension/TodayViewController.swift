@@ -8,12 +8,19 @@
 
 import UIKit
 import NotificationCenter
+import Moya
+import RxSwift
+import PromiseKit
 
 class TodayViewController: UIViewController, NCWidgetProviding {
     
     @IBOutlet weak var totalAssetLabel: UILabel!
-    @IBOutlet weak var BtcLabel: UILabel!
+    @IBOutlet weak var coinLabel: UILabel!
+    @IBOutlet weak var coinPriceLabel: UILabel!
     
+    private let publicProvider = MoyaProvider<PublicApi>()
+    private let disposebag = DisposeBag()
+    private var ticker : Ticker?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,12 +33,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-        // Perform any setup necessary in order to update the view.
-        
-        // If an error is encountered, use NCUpdateResult.Failed
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
-        
+        let promises: [Promise<Bool>] = [self.getTicker(pair: "btc_jpy")]
+        when(resolved: promises).done { result in
+            self.coinPriceLabel.text = self.ticker?.data.last
+        }
         completionHandler(NCUpdateResult.newData)
     }
     
@@ -42,6 +47,27 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         else {
             self.preferredContentSize = CGSize(width: 0, height: 100);
         }
+    }
+    
+    func getTicker(pair: String) -> Promise<Bool> {
+        return Promise(resolver: { seal in
+            self.publicProvider.rx.request(.getTicker(pair: pair)).subscribe { event in
+                switch event {
+                case .success(let response):
+                    do {
+                        let decoder = JSONDecoder()
+                        self.ticker = try decoder.decode(Ticker.self, from: response.data)
+                        
+                        print("ticker:", self.ticker as Any)
+                    } catch(let error) {
+                        print("json convert failed in JSONDecoder", error.localizedDescription)
+                    }
+                case .error(let error):
+                    print("error:", error)
+                }
+                seal.fulfill(true)
+            }.disposed(by: self.disposebag)
+        })
     }
     
 }
