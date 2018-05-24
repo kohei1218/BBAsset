@@ -13,13 +13,15 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var coinPickerView: UIPickerView!
     @IBOutlet weak var saveButton: UIButton!
     
-     private var list = ["BTC", "XRP", "LTC", "ETH", "MONA" ,"BCC"]
+    private let list = ["BTC", "XRP", "LTC", "ETH", "MONA" ,"BCC"]
+    private var selectStr : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         saveButton.layer.cornerRadius = 10
         saveButton.clipsToBounds = true
+        selectStr = "BTC"
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,7 +31,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 
     
     @IBAction func actionSaveUserDefaults(_ sender: Any) {
-        
+        if selectStr != nil {
+            let defaults = UserDefaults.standard
+            defaults.set(selectStr, forKey: "select_coin")
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -51,7 +56,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func pickerView(_ pickerView: UIPickerView,
                     didSelectRow row: Int,
                     inComponent component: Int) {
-        // 処理
+        selectStr = list[row]
     }
     
 }
