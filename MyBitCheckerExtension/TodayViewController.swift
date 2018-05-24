@@ -23,7 +23,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     private let privateProvider = MoyaProvider<PrivateApi>()
     private let disposebag = DisposeBag()
     private var ticker : Ticker?
-    private var assets : Array<AssetElement>?
+    private var assets : Array<AssetElement>? 
     private var selectCoinName : String?
     
     override func viewDidLoad() {

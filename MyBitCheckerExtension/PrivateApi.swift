@@ -15,12 +15,13 @@ enum PrivateApi {
 }
 
 extension PrivateApi: TargetType {
+    
     var headers: [String : String]? {
         return [
             "Content-Type":"application/json",
-            "ACCESS-KEY" : "api key",
+            "ACCESS-KEY" : getApiKeyFromUserDefaults(),
             "ACCESS-NONCE" : self.makeHaederUnixTime(unixTime: String(floor(NSDate().timeIntervalSince1970) * 1000)),
-            "ACCESS-SIGNATURE" : self.makeAccessSignWith(accessKey: "api secret", unixtime: String(floor(NSDate().timeIntervalSince1970) * 1000), path: "/v1/user/assets", queryParam: "")!
+            "ACCESS-SIGNATURE" : self.makeAccessSignWith(accessKey: self.getApiSecretfromUserDefaults(), unixtime: String(floor(NSDate().timeIntervalSince1970) * 1000), path: "/v1/user/assets", queryParam: "")!
         ]
     }
     
@@ -53,6 +54,10 @@ extension PrivateApi: TargetType {
         }
     }
     
+    private var defaults : UserDefaults? {
+        return UserDefaults(suiteName: "group.jp.co.myBitChecker")
+    }
+    
     private func makeAccessSignWith(accessKey: String, unixtime: String, path: String, queryParam: String) -> String? {
         let unixTimeStr = self.makeHaederUnixTime(unixTime: unixtime)
         let linkedStr = unixTimeStr + path + queryParam
@@ -68,6 +73,20 @@ extension PrivateApi: TargetType {
     
     private func makeHaederUnixTime(unixTime: String) -> String {
         return unixTime.replacingOccurrences(of: ".0", with: "")
+    }
+    
+    private func getApiKeyFromUserDefaults() -> String {
+        if let apiKey = defaults?.string(forKey: "api_key") {
+            return apiKey
+        }
+        return ""
+    }
+
+    private func getApiSecretfromUserDefaults() -> String {
+        if let apiSecret = defaults?.string(forKey: "api_secret") {
+            return apiSecret
+        }
+        return ""
     }
     
 }

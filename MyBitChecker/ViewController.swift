@@ -11,7 +11,10 @@ import UIKit
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var coinPickerView: UIPickerView!
-    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var saveUserDefaultsButton: UIButton!
+    @IBOutlet weak var apiKeyTextField: UITextField!
+    @IBOutlet weak var apiSecretTextField: UITextField!
+    @IBOutlet weak var saveApiInfoButton: UIButton!
     
     private let titleList = ["BTC", "XRP", "MONA" ,"BCC"]
     private let contentList = ["btc", "xrp", "mona", "bcc"]
@@ -20,8 +23,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        saveButton.layer.cornerRadius = 10
-        saveButton.clipsToBounds = true
+        saveUserDefaultsButton.layer.cornerRadius = 10
+        saveUserDefaultsButton.clipsToBounds = true
+        saveApiInfoButton.layer.cornerRadius = 10
+        saveApiInfoButton.clipsToBounds = true
         selectStr = "btc"
     }
 
@@ -36,6 +41,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             let defaults = UserDefaults(suiteName: "group.jp.co.myBitChecker")
             defaults?.set(selectStr, forKey: "select_coin")
         }
+    }
+    
+    @IBAction func actionSaveApiInfoToUserDefaults(_ sender: Any) {
+        let defaults = UserDefaults(suiteName: "group.jp.co.myBitChecker")
+        defaults?.set(apiKeyTextField.text, forKey: "api_key")
+        defaults?.set(apiSecretTextField.text, forKey: "api_secret")
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
