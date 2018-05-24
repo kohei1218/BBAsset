@@ -6,6 +6,7 @@ target 'MyBitChecker' do
   use_frameworks!
 
   # Pods for MyBitChecker
+  pod 'IQKeyboardManagerSwift'
 
 end
 
