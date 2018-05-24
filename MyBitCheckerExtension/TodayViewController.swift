@@ -8,12 +8,22 @@
 
 import UIKit
 import NotificationCenter
+import Moya
+import RxSwift
+import PromiseKit
+import CryptoSwift
 
 class TodayViewController: UIViewController, NCWidgetProviding {
     
     @IBOutlet weak var totalAssetLabel: UILabel!
-    @IBOutlet weak var BtcLabel: UILabel!
+    @IBOutlet weak var coinLabel: UILabel!
+    @IBOutlet weak var coinPriceLabel: UILabel!
     
+    private let publicProvider = MoyaProvider<PublicApi>()
+    private let privateProvider = MoyaProvider<PrivateApi>()
+    private let disposebag = DisposeBag()
+    private var ticker : Ticker?
+    private var assets : Array<AssetElement>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,12 +36,16 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-        // Perform any setup necessary in order to update the view.
-        
-        // If an error is encountered, use NCUpdateResult.Failed
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
-        
+        let promises: [Promise<Bool>] = [self.getTicker(pair: "btc_jpy"), self.getAssets()]
+        when(resolved: promises).done { result in
+            self.coinPriceLabel.text = self.ticker?.data.last
+            if let assets = self.assets {
+                for asset in assets {
+                    print("assetとはfra:", asset.asset)
+                }
+            }
+            print("成功")
+        }
         completionHandler(NCUpdateResult.newData)
     }
     
@@ -42,6 +56,47 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         else {
             self.preferredContentSize = CGSize(width: 0, height: 100);
         }
+    }
+    
+    //ticker情報取得
+    func getTicker(pair: String) -> Promise<Bool> {
+        return Promise(resolver: { seal in
+            self.publicProvider.rx.request(.getTicker(pair: pair)).subscribe { event in
+                switch event {
+                case .success(let response):
+                    do {
+                        let decoder = JSONDecoder()
+                        self.ticker = try decoder.decode(Ticker.self, from: response.data)
+                        print("ticker:", self.ticker!)
+                    } catch(let error) {
+                        print("json convert failed in JSONDecoder", error.localizedDescription)
+                    }
+                case .error(let error):
+                    print("error:", error)
+                }
+                seal.fulfill(true)
+            }.disposed(by: self.disposebag)
+        })
+    }
+    
+    //assets取得
+    func getAssets() -> Promise<Bool> {
+        return Promise(resolver: { seal in
+            self.privateProvider.rx.request(.getAssets()).subscribe { event in
+                switch event {
+                case .success(let response):
+                    do {
+                        let decoder = JSONDecoder()
+                        self.assets = try decoder.decode(Asset.self, from: response.data).data.assets
+                    } catch(let error) {
+                        print("json convert failed in JSONDecoder", error.localizedDescription)
+                    }
+                case .error(let error):
+                    print("error:", error)
+                }
+                seal.fulfill(true)
+            }.disposed(by: self.disposebag)
+        })
     }
     
 }
