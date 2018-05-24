@@ -21,7 +21,7 @@ extension PrivateApi: TargetType {
             "Content-Type":"application/json",
             "ACCESS-KEY" : getApiKeyFromUserDefaults(),
             "ACCESS-NONCE" : self.makeHaederUnixTime(unixTime: String(floor(NSDate().timeIntervalSince1970) * 1000)),
-            "ACCESS-SIGNATURE" : self.makeAccessSignWith(accessKey: self.getApiSecretfromUserDefaults(), unixtime: String(floor(NSDate().timeIntervalSince1970) * 1000), path: "/v1/user/assets", queryParam: "")!
+            "ACCESS-SIGNATURE" : self.makeAccessSignWith(accessKey: self.getApiKeyFromUserDefaults(), unixtime: String(floor(NSDate().timeIntervalSince1970) * 1000), path: "/v1/user/assets", queryParam: "")!
         ]
     }
     
@@ -54,10 +54,6 @@ extension PrivateApi: TargetType {
         }
     }
     
-    private var defaults : UserDefaults? {
-        return UserDefaults(suiteName: "group.jp.co.myBitChecker")
-    }
-    
     private func makeAccessSignWith(accessKey: String, unixtime: String, path: String, queryParam: String) -> String? {
         let unixTimeStr = self.makeHaederUnixTime(unixTime: unixtime)
         let linkedStr = unixTimeStr + path + queryParam
@@ -66,7 +62,7 @@ extension PrivateApi: TargetType {
         
         bytes += linkedStr.bytes
         
-        let signedString = try? HMAC(key: "api secret", variant: .sha256).authenticate(bytes)
+        let signedString = try? HMAC(key: getApiSecretfromUserDefaults(), variant: .sha256).authenticate(bytes)
         
         return signedString?.toHexString()
     }
@@ -76,6 +72,7 @@ extension PrivateApi: TargetType {
     }
     
     private func getApiKeyFromUserDefaults() -> String {
+        let defaults = UserDefaults(suiteName: "group.jp.co.myBitChecker")
         if let apiKey = defaults?.string(forKey: "api_key") {
             return apiKey
         }
@@ -83,6 +80,7 @@ extension PrivateApi: TargetType {
     }
 
     private func getApiSecretfromUserDefaults() -> String {
+        let defaults = UserDefaults(suiteName: "group.jp.co.myBitChecker")
         if let apiSecret = defaults?.string(forKey: "api_secret") {
             return apiSecret
         }
