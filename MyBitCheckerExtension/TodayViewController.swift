@@ -24,6 +24,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     private let disposebag = DisposeBag()
     private var ticker : Ticker?
     private var assets : Array<AssetElement>?
+    private var selectCoinName : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,15 +37,19 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-        let promises: [Promise<Bool>] = [self.getTicker(pair: "btc_jpy"), self.getAssets()]
-        when(resolved: promises).done { result in
-            self.coinPriceLabel.text = self.ticker?.data.last
-            if let assets = self.assets {
-                for asset in assets {
-                    print("assetとはfra:", asset.asset)
+        let defaults = UserDefaults(suiteName: "group.jp.co.myBitChecker")
+        selectCoinName = defaults?.string(forKey: "select_coin")
+        if let selectCoinName = selectCoinName {
+            let promises: [Promise<Bool>] = [self.getTicker(pair: selectCoinName + "_jpy"), self.getAssets()]
+            when(resolved: promises).done { result in
+                self.coinPriceLabel.text = self.ticker?.data.last
+                if let assets = self.assets {
+                    for asset in assets {
+                        print("assetとはfra:", asset.asset)
+                    }
                 }
+                print("成功")
             }
-            print("成功")
         }
         completionHandler(NCUpdateResult.newData)
     }

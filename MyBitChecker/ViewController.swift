@@ -13,7 +13,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var coinPickerView: UIPickerView!
     @IBOutlet weak var saveButton: UIButton!
     
-    private let list = ["BTC", "XRP", "LTC", "ETH", "MONA" ,"BCC"]
+    private let titleList = ["BTC", "XRP", "MONA" ,"BCC"]
+    private let contentList = ["btc", "xrp", "mona", "bcc"]
     private var selectStr : String?
     
     override func viewDidLoad() {
@@ -21,7 +22,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         // Do any additional setup after loading the view, typically from a nib.
         saveButton.layer.cornerRadius = 10
         saveButton.clipsToBounds = true
-        selectStr = "BTC"
+        selectStr = "btc"
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,8 +33,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     @IBAction func actionSaveUserDefaults(_ sender: Any) {
         if selectStr != nil {
-            let defaults = UserDefaults.standard
-            defaults.set(selectStr, forKey: "select_coin")
+            let defaults = UserDefaults(suiteName: "group.jp.co.myBitChecker")
+            defaults?.set(selectStr, forKey: "select_coin")
         }
     }
     
@@ -43,20 +44,20 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     func pickerView(_ pickerView: UIPickerView,
                     numberOfRowsInComponent component: Int) -> Int {
-        return list.count
+        return titleList.count
     }
     
     func pickerView(_ pickerView: UIPickerView,
                     titleForRow row: Int,
                     forComponent component: Int) -> String? {
         
-        return list[row]
+        return titleList[row]
     }
     
     func pickerView(_ pickerView: UIPickerView,
                     didSelectRow row: Int,
                     inComponent component: Int) {
-        selectStr = list[row]
+        selectStr = contentList[row]
     }
     
 }
