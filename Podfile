@@ -16,5 +16,6 @@ target 'MyBitCheckerExtension' do
   # Pods for MyBitCheckerExtension
   pod 'Moya/RxSwift', '~> 11.0'
   pod "PromiseKit", "~> 6.0"
+  pod 'CryptoSwift'
 
 end

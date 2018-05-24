@@ -10,10 +10,10 @@ import Foundation
 
 struct Ticker: Codable {
     let success: Int
-    let data: DataClass
+    let data: TickerDataClass
 }
 
-struct DataClass: Codable {
+struct TickerDataClass: Codable {
     let sell, buy, high, low: String
     let last, vol: String
     let timestamp: Int
