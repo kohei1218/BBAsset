@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,77 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyBitChecker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="be7-9i-adL">
+                                <rect key="frame" x="28" y="225" width="320" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="LcP-tu-zC6"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="WlG-hC-WWL"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjF-X2-YON">
+                                <rect key="frame" x="166" y="104" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title_icon" translatesAutoresizingMaskIntoConstraints="NO" id="mzQ-uD-bZm">
+                                <rect key="frame" x="24" y="52" width="327" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="oYs-Pk-reH"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JPY建てで表示します" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84b-Lm-PgD">
+                                <rect key="frame" x="97" y="126" width="181" height="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p5s-aH-acH">
+                                <rect key="frame" x="137.5" y="473" width="100" height="50"/>
+                                <color key="backgroundColor" red="0.090196078431372548" green="0.24705882352941178" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="WGd-Pk-lHd"/>
+                                    <constraint firstAttribute="width" constant="100" id="wSC-ej-f9N"/>
+                                </constraints>
+                                <state key="normal" title="保存">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionSaveUserDefaults:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IJj-C1-Oh1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.24705882352941178" green="0.57647058823529407" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="be7-9i-adL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4vh-hd-fIl"/>
+                            <constraint firstItem="p5s-aH-acH" firstAttribute="top" secondItem="be7-9i-adL" secondAttribute="bottom" constant="32" id="Gq4-pZ-va3"/>
+                            <constraint firstItem="p5s-aH-acH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SxA-AT-bNU"/>
+                            <constraint firstItem="mzQ-uD-bZm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="UGs-OF-2Q3"/>
+                            <constraint firstItem="be7-9i-adL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ZFo-GX-jDn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mzQ-uD-bZm" secondAttribute="trailing" constant="24" id="bYx-Fk-YBm"/>
+                            <constraint firstItem="84b-Lm-PgD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fPi-gG-Ywo"/>
+                            <constraint firstItem="mzQ-uD-bZm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="lP6-Lw-KnQ"/>
+                            <constraint firstItem="84b-Lm-PgD" firstAttribute="top" secondItem="mzQ-uD-bZm" secondAttribute="bottom" constant="24" id="pry-uV-8Nb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="coinPickerView" destination="be7-9i-adL" id="M8W-bH-QGd"/>
+                        <outlet property="saveButton" destination="p5s-aH-acH" id="jAX-GL-vJ1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="62" y="135"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="title_icon" width="277" height="49"/>
+    </resources>
 </document>
