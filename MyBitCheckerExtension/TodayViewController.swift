@@ -51,7 +51,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                     for asset in assets {
                         if asset.asset == selectCoinName {
                             let totalAsset = Double(asset.onhandAmount)! * Double(ticker.data.last)!
-                            self.totalAssetLabel.text = String(floor(totalAsset)) + "円"
+                            self.totalAssetLabel.text = String(floor(totalAsset)).replacingOccurrences(of: ".0", with: "") + "円"
                         }
                     }
                 }
