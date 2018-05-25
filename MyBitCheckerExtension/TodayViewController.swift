@@ -18,6 +18,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet weak var totalAssetLabel: UILabel!
     @IBOutlet weak var coinLabel: UILabel!
     @IBOutlet weak var coinPriceLabel: UILabel!
+    @IBOutlet weak var coinImageView: UIImageView!
     
     private let publicProvider = MoyaProvider<PublicApi>()
     private let privateProvider = MoyaProvider<PrivateApi>()
@@ -40,15 +41,20 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         let defaults = UserDefaults(suiteName: "group.jp.co.myBitChecker")
         selectCoinName = defaults?.string(forKey: "select_coin")
         if let selectCoinName = selectCoinName {
+            coinImageView.image = UIImage(named: selectCoinName)
             let promises: [Promise<Bool>] = [self.getTicker(pair: selectCoinName + "_jpy"), self.getAssets()]
             when(resolved: promises).done { result in
+                self.coinLabel.text = selectCoinName.uppercased()
                 self.coinPriceLabel.text = self.ticker?.data.last
-                if let assets = self.assets {
+                if let assets = self.assets, let ticker = self.ticker {
+                    print("assets:", assets)
                     for asset in assets {
-                        print("assetとはfra:", asset.asset)
+                        if asset.asset == selectCoinName {
+                            let totalAsset = Double(asset.onhandAmount)! * Double(ticker.data.last)!
+                            self.totalAssetLabel.text = String(floor(totalAsset)) + "円"
+                        }
                     }
                 }
-                print("成功")
             }
         }
         completionHandler(NCUpdateResult.newData)

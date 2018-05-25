@@ -10,6 +10,7 @@
 		5510C57920AD77770003D7A5 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510C57820AD77770003D7A5 /* Asset.swift */; };
 		5555F60920AAE771006B52FD /* PrivateApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555F60820AAE771006B52FD /* PrivateApi.swift */; };
 		5555F60A20AAE771006B52FD /* PrivateApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555F60820AAE771006B52FD /* PrivateApi.swift */; };
+		557474B520B6D7CA00D9F8E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 557E16CD2091EF6D00016711 /* Assets.xcassets */; };
 		55799A872091FAFB00E9A21D /* PublicApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55799A862091FAFB00E9A21D /* PublicApi.swift */; };
 		55799A882091FAFB00E9A21D /* PublicApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55799A862091FAFB00E9A21D /* PublicApi.swift */; };
 		55799A8A2092024300E9A21D /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55799A892092024300E9A21D /* Ticker.swift */; };
@@ -284,6 +285,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				557474B520B6D7CA00D9F8E2 /* Assets.xcassets in Resources */,
 				557E16E52091F02100016711 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
