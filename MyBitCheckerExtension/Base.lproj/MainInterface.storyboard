@@ -19,39 +19,58 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="総資産" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXn-zK-Gwb">
-                                <rect key="frame" x="8" y="8" width="52" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="40" y="10" width="52" height="31.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhm-Ih-LCm">
-                                <rect key="frame" x="252" y="8" width="60" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhm-Ih-LCm">
+                                <rect key="frame" x="312" y="26" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ビットコイン" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmz-zc-cUw">
-                                <rect key="frame" x="8" y="37" width="104" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISz-KD-Bx0">
+                                <rect key="frame" x="312" y="50" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISz-KD-Bx0">
-                                <rect key="frame" x="259" y="37" width="53" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset" translatesAutoresizingMaskIntoConstraints="NO" id="8eg-Er-oiy">
+                                <rect key="frame" x="8" y="12" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="S9w-28-sPb"/>
+                                    <constraint firstAttribute="width" constant="24" id="kEs-oE-uDp"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="05T-He-E7e">
+                                <rect key="frame" x="8" y="44" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="cOw-jh-vhO"/>
+                                    <constraint firstAttribute="height" constant="24" id="trU-oI-pfk"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCj-W6-c79">
+                                <rect key="frame" x="40" y="49.5" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="jXn-zK-Gwb" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="8" id="3vI-q2-C9J"/>
-                            <constraint firstItem="jXn-zK-Gwb" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" constant="8" id="5GE-k8-wPO"/>
-                            <constraint firstItem="bmz-zc-cUw" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="8" id="PrL-ub-4Ue"/>
-                            <constraint firstItem="ISz-KD-Bx0" firstAttribute="centerY" secondItem="bmz-zc-cUw" secondAttribute="centerY" id="QhH-x7-ke3"/>
+                            <constraint firstItem="05T-He-E7e" firstAttribute="top" secondItem="8eg-Er-oiy" secondAttribute="bottom" constant="8" id="2kf-IP-mYh"/>
+                            <constraint firstItem="jXn-zK-Gwb" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" constant="10" id="5GE-k8-wPO"/>
+                            <constraint firstItem="jXn-zK-Gwb" firstAttribute="leading" secondItem="8eg-Er-oiy" secondAttribute="trailing" constant="8" id="5Hr-7G-QZq"/>
+                            <constraint firstItem="qCj-W6-c79" firstAttribute="top" secondItem="jXn-zK-Gwb" secondAttribute="bottom" constant="8" id="70C-Jh-624"/>
+                            <constraint firstItem="8eg-Er-oiy" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" constant="12" id="DhG-l2-8dT"/>
+                            <constraint firstItem="qCj-W6-c79" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="OdC-8g-eJk"/>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="ISz-KD-Bx0" secondAttribute="trailing" constant="8" id="WJu-cO-H0X"/>
-                            <constraint firstItem="bmz-zc-cUw" firstAttribute="top" secondItem="jXn-zK-Gwb" secondAttribute="bottom" constant="8" id="io4-1F-4bP"/>
+                            <constraint firstItem="ISz-KD-Bx0" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="crS-gP-R96"/>
+                            <constraint firstItem="qCj-W6-c79" firstAttribute="leading" secondItem="05T-He-E7e" secondAttribute="trailing" constant="8" id="jWB-8y-fpL"/>
+                            <constraint firstItem="05T-He-E7e" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="8" id="lx1-90-CZP"/>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="xhm-Ih-LCm" secondAttribute="trailing" constant="8" id="nfr-rW-abd"/>
                             <constraint firstItem="xhm-Ih-LCm" firstAttribute="centerY" secondItem="jXn-zK-Gwb" secondAttribute="centerY" id="rfO-yn-8yi"/>
+                            <constraint firstItem="8eg-Er-oiy" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="8" id="wGX-UY-gG9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
                     </view>
@@ -59,13 +78,18 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="100"/>
                     <connections>
-                        <outlet property="coinLabel" destination="bmz-zc-cUw" id="L66-iU-gic"/>
+                        <outlet property="coinImageView" destination="05T-He-E7e" id="4sR-dm-HjN"/>
+                        <outlet property="coinLabel" destination="qCj-W6-c79" id="FdC-4o-6Wc"/>
                         <outlet property="coinPriceLabel" destination="ISz-KD-Bx0" id="CWn-k6-7Cm"/>
                         <outlet property="totalAssetLabel" destination="xhm-Ih-LCm" id="hL8-Lo-ud7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="65.599999999999994" y="33.283358320839582"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="asset" width="50" height="50"/>
+    </resources>
 </document>
